@@ -1,7 +1,15 @@
-#read cvs filele
-import pandas as pd
-import numpy as np
+import csv
+import json
 
-#abrir csv
-df = pd.read_csv('/Lamdaa_asincrono/nombres.csv')
+def readcsv(file):
+    with open(file) as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            print(row)
+            
+def lambda_handler(event, context):
 
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Hello from Lambda!')
+    }
