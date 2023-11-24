@@ -26,6 +26,9 @@ Resources:
           Properties:
             Path: /prueba
             Method: get
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref DynamoDBTabla
   DynamoDBTabla:
     Type: 'AWS::Serverless::SimpleTable'
     Properties:
